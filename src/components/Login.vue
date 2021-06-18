@@ -4,6 +4,7 @@
       <vue-form :state="formState" @submit.prevent="enviar()">
         <h1>Log in</h1>
         <!-- user -->
+
         <validate tag="div">
           <label for="user">Username</label>
           <input
@@ -48,9 +49,8 @@
         </button>
 
         <div class="alert alert-danger error mt-3" v-if="invalidCredentials">
-          {{this.errorMessage}}
+          {{ this.errorMessage }}
         </div>
-        
       </vue-form>
     </div>
   </section>
@@ -76,7 +76,7 @@
        getInicialData(){
         return{
           username: '',
-          password: '', 
+          password: '',
         }
       },
        enviar(){
@@ -95,7 +95,7 @@
         } catch (error) {
           console.log(error)
         }
-        
+
         this.formData = this.getInicialData()
         this.formState._reset()
       }
